@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>جدول المواعيد الأسبوعي</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="page">
+  <header class="head">
+    <div class="note">Better<br>Days<br>Ahead</div>
+    <div class="title-wrap">
+      <div class="banner"><input id="title" class="title" aria-label="عنوان الجدول" maxlength="60"></div>
+      <div class="sub"><span></span><input id="sub" aria-label="العنوان الفرعي" maxlength="40"><span></span></div>
+    </div>
+    <svg class="cal" viewBox="0 0 64 64" fill="none" stroke="#2b3a67" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="12" width="46" height="42" rx="7"/><path d="M6 24h46M16 6v10M42 6v10M14 34h8M28 34h8M14 44h8"/><circle cx="48" cy="46" r="11" fill="#fff"/><path d="m43 46 4 4 7-8"/></svg>
+  </header>
+
+  <section class="tools">
+    <div class="panel">
+      <h3 id="edTitle">بلوك جديد</h3>
+      <label>النص <input id="bt" placeholder="مثال: DB أو سكشن DS" maxlength="30"></label>
+      <label>الشكل
+        <select id="bs">
+          <option value="round">دائري الحواف</option>
+          <option value="pill">كبسولة</option>
+          <option value="square">مربع</option>
+          <option value="leaf">ورقة</option>
+        </select>
+      </label>
+      <div class="lbl">اللون</div>
+      <div class="sw" id="sw"></div>
+      <input type="color" id="bc" value="#4a90d9" aria-label="لون مخصص">
+      <div class="btns">
+        <button id="add" class="primary">+ إضافة بلوك</button>
+        <button id="del" class="danger" hidden>حذف البلوك</button>
+      </div>
+    </div>
+    <div class="panel grow">
+      <h3>البلوكات <small>اسحب البلوك إلى الجدول (اضغط للتعديل)</small></h3>
+      <div id="tray" class="tray"></div>
+      <div id="trash" class="trash">🗑 اسحب هنا للحذف</div>
+    </div>
+  </section>
+
+  <div class="table-wrap"><table id="tbl"></table></div>
+
+  <div class="legend" id="legend"></div>
+  <div class="foot">
+    <button id="clear">مسح الجدول</button>
+    <button id="print">طباعة</button>
+  </div>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
